@@ -9,37 +9,37 @@
 
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>C:\UltrakillDeps\0Harmony.dll</HintPath>
+      <HintPath>_UltrakillDeps\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>C:\UltrakillDeps\Assembly-CSharp.dll</HintPath>
+      <HintPath>_UltrakillDeps\\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx">
-      <HintPath>C:\UltrakillDeps\BepInEx.dll</HintPath>
+      <HintPath>_UltrakillDeps\\BepInEx.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\ULTRAKILL\ULTRAKILL_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+      <HintPath>_UltrakillDeps\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>C:\UltrakillDeps\UnityEngine.dll</HintPath>
+      <HintPath>_UltrakillDeps\\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>C:\UltrakillDeps\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>_UltrakillDeps\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.InputLegacyModule">
-      <HintPath>..\..\_UltrakillDeps\UnityEngine.InputLegacyModule.dll</HintPath>
+      <HintPath>_UltrakillDeps\UnityEngine.InputLegacyModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:\UltrakillDeps\UnityEngine.UI.dll</HintPath>
+      <HintPath>_UltrakillDeps\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIElementsModule">
-      <HintPath>C:\UltrakillDeps\UnityEngine.UIElementsModule.dll</HintPath>
+      <HintPath>_UltrakillDeps\UnityEngine.UIElementsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIModule">
-      <HintPath>C:\UltrakillDeps\UnityEngine.UIModule.dll</HintPath>
+      <HintPath>_UltrakillDeps\UnityEngine.UIModule.dll</HintPath>
     </Reference>
   </ItemGroup>
-	<Target Name="PostBuild" AfterTargets="Build">
+	<Target Name="PostBuild" AfterTargets="Build" Condition="'$(GITHUB_ACTIONS)' != 'true'">
 		<Copy SourceFiles="$(TargetDir)MaximizedWindowedMode.dll" DestinationFolder="C:\Program Files (x86)\Steam\steamapps\common\ULTRAKILL\BepInEx\plugins\" />
 	</Target>
 </Project>
