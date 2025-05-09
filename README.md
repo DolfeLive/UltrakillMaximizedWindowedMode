@@ -1,1 +1,3 @@
 # MaximizedWindowedMode
+
+Windows only
